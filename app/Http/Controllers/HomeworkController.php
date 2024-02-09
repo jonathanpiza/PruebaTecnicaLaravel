@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CorreoMailable;
 use App\Models\Homeworks;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Mail;
 
 class HomeworkController extends Controller
 {
@@ -14,7 +15,7 @@ class HomeworkController extends Controller
         return view('home', compact('homeworks'));
     }
 
-    public function addHomework(Request $request, Redirect $redirect ){
+    public function addHomework(Request $request, Redirector $redirect ){
         $request->validate([
             'titulo' => ['required', 'string'],
             'descripcion' => ['required', 'string'],
@@ -29,6 +30,7 @@ class HomeworkController extends Controller
         $homeworks->completado=0;
 
         $homeworks->save();
+        Mail::to(auth()->user()->email)->send(new CorreoMailable($request->titulo, $request->descripcion, $request->fecha_vencimiento));
 
         return $redirect->to('/home');
 
