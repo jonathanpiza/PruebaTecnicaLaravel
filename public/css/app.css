@@ -122,15 +122,27 @@ form button{
 
 .container-flex{
     display: flex;
-    flex-direction: column;
     flex: 1;
     justify-content: center;
-    margin: 5%;
+    margin: 10%;
     align-items: center;
     border-radius: 20px;
     padding: 30px;
     background-color: #f0f0f0;
 }
+
+.container-table{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    margin: 10%;
+    align-items: start;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #f0f0f0;
+}
+
 .table{
     width: 100%;
     border-spacing: 0px;

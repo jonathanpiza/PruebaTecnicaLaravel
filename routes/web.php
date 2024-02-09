@@ -14,4 +14,4 @@ Route::post('/sign-up', [AuthController::class, 'register']);
 Route::get('/logout',[AuthController::class, 'logout'])->middleware('auth');
 Route::get('/home',[HomeworkController::class, 'getHomework'])->name('home')->middleware('auth');
 Route::view('/add', 'add')->name('addHomeworks')->middleware('auth');
-Route::post('/addHomework',[HomeworkController::class, 'addHomework'])->middleware('auth');
+Route::post('/add',[HomeworkController::class, 'addHomework'])->middleware('auth');

@@ -9,7 +9,7 @@
     </head>
     <body>
        @include('layauts.navbar')
-       <div class="container-flex">
+       <div class="container-table">
             <table class="table">
                 <thead>
                     <tr>

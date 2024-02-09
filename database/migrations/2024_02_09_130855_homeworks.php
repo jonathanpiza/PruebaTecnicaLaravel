@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->date('fecha_vencimiento');
             $table->tinyInteger('completado');
+            $table->timestamps();
             $table->foreign('id_usuario')->references('id')->on('users');
         });
     }

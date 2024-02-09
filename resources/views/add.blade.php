@@ -10,19 +10,28 @@
     <body>
         @include('layauts.navbar')
         <div class="container-flex">
-            <form class="container-form">
+            <form class="container-form" method="post">
                 @csrf
                 <div class="form-control">
                     <label class="label">Titulo:</label>
                     <input class="input" type="text" name="titulo" required value="{{ old('titulo')}}"/>
+                    @error('titulo')
+                        <p class="error">{{$message}}</p>
+                    @enderror
                 </div>
                 <div class="form-control">
                     <label class="label">Descripcion:</label>
                     <textarea class="input" type="text" name="descripcion" required value="{{ old('decripcion')}}"></textarea>
+                    @error('descripcion')
+                        <p class="error">{{$message}}</p>
+                    @enderror
                 </div>
                 <div class="form-control">
                     <label>Fecha Vencimiento:</label>
                     <input class="input" type="date" name="fecha_vencimiento" required value="{{ old('fecha_vencimiento')}}"/>
+                    @error('fecha_vencimiento')
+                        <p class="error">{{$message}}</p>
+                    @enderror
                 </div>
                 <div class="container-button"> 
                     <button type="submit" class="btn-primary">Agregar</button>
