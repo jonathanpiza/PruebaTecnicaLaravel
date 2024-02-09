@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Panel</title>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    </head>
+    <body>
+        @include('layauts.navbar')
+        <div class="container-flex">
+            <form class="container-form">
+                @csrf
+                <div class="form-control">
+                    <label class="label">Titulo:</label>
+                    <input class="input" type="text" name="titulo" required value="{{ old('titulo')}}"/>
+                </div>
+                <div class="form-control">
+                    <label class="label">Descripcion:</label>
+                    <textarea class="input" type="text" name="descripcion" required value="{{ old('decripcion')}}"></textarea>
+                </div>
+                <div class="form-control">
+                    <label>Fecha Vencimiento:</label>
+                    <input class="input" type="date" name="fecha_vencimiento" required value="{{ old('fecha_vencimiento')}}"/>
+                </div>
+                <div class="container-button"> 
+                    <button type="submit" class="btn-primary">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

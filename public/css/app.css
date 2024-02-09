@@ -1,0 +1,143 @@
+html{
+    line-height:1.15;
+    -webkit-text-size-adjust:100%;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    line-height:1.5
+}
+body{
+    margin:0;
+    background: #6666ff;
+}
+
+.container{
+   display: flex;
+   flex: 1;
+   color: #f0f0f0;
+   justify-content: center;
+   align-items: center;
+   margin: 15%;
+}
+
+.container-h2{
+    flex: 2;
+    text-align: center;
+}
+
+.container-form{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 30px;
+    color: #000000;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: start;
+}
+.label{
+    font-weight: bold;
+    font-size: small;
+}
+.input{
+    border: 0;
+    padding: 3px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.error{
+    color: #ff0000;
+    margin: 0;
+    font-size: small;
+}
+
+.form-control{
+    width: 100%;
+    flex: 1;
+    justify-content: center;
+    align-items: start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.container-button{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.btn-primary{
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #f0f0f0;
+    border: 0;
+    background-color: #0099ff;
+    border-radius: 5px;
+}
+
+.btn-secondary{
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    color: #f0f0f0;
+    background-color: #737373;
+    margin: 5px;
+}
+
+header {
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+form {
+    display: flex;
+    flex: 1;
+}
+form h1{
+    flex: 3;
+    margin: 5px;
+}
+form button{
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #f0f0f0;
+    border: 0;
+    background-color: #000066;
+    border-radius: 10px;
+}
+
+.container-flex{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    margin: 5%;
+    align-items: center;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #f0f0f0;
+}
+.table{
+    width: 100%;
+    border-spacing: 0px;
+}
+.table th, td{
+    width: 25%;
+    border: 1px #000000 solid;
+    text-align: center;
+    padding: 2px;
+}
