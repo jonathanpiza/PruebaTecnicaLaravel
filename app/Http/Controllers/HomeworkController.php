@@ -40,6 +40,6 @@ class HomeworkController extends Controller
         $homework = Homeworks::find($id);
         $homework->completado=1;
         $homework->save();
-        return $redirect->to('/home');
+        return $redirect->back();
     }
 }
