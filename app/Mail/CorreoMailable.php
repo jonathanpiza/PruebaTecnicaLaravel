@@ -34,7 +34,7 @@ class CorreoMailable extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Tarea '.$this->titulo,
+            subject: 'Tarea '.$this->titulo
         );
     }
 
@@ -45,11 +45,14 @@ class CorreoMailable extends Mailable
      */
     public function content()
     {
-        return $this->view('email.correo')->with([
-            'titulo'=>$this->titulo,
-            'descripcion'=>$this->descripcion,
-            'fecha'=>$this->fecha
-        ]);
+        return new Content(
+            view: 'email.correo',
+            with: [
+                'titulo'=>$this->titulo,
+                'descripcion'=>$this->descripcion,
+                'fecha'=>$this->fecha
+            ]
+        );
     }
 
     /**

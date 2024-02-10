@@ -35,4 +35,11 @@ class HomeworkController extends Controller
         return $redirect->to('/home');
 
     }
+
+    public function setHomework($id, Redirector $redirect ){
+        $homework = Homeworks::find($id);
+        $homework->completado=1;
+        $homework->save();
+        return $redirect->to('/home');
+    }
 }

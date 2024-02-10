@@ -15,4 +15,4 @@ Route::get('/logout',[AuthController::class, 'logout'])->middleware('auth');
 Route::get('/home',[HomeworkController::class, 'getHomework'])->name('home')->middleware('auth');
 Route::view('/add', 'add')->name('addHomeworks')->middleware('auth');
 Route::post('/add',[HomeworkController::class, 'addHomework'])->middleware('auth');
-
+Route::get('/complete/{id}',[HomeworkController::class, 'setHomework'])->name('complete')->middleware('auth');

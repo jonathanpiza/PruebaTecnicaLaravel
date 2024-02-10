@@ -25,7 +25,11 @@
                             <td>{{$item->titulo}}</td>
                             <td>{{$item->descripcion}}</td>
                             <td>{{$item->fecha_vencimiento}}</td>
-                            <td><input type="checkbox" {{$item->completado==0?null:'disabled checked'}} /></td>
+                            <td>
+                                <form id="{{$item->id}}" action="{{route('complete', $item->id)}}">
+                                    <input type="checkbox" id="{{$item->id}}" onchange="handleChange(this)" {{$item->completado==0?null:'disabled checked'}} />
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -33,4 +37,10 @@
             {{ $homeworks->links() }}
         </div>
     </body>
+    <script>
+        function handleChange(data) {
+            const id = data.id;
+            document.getElementById(id).submit();
+        }
+    </script>
 </html>
